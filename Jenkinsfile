@@ -3,6 +3,18 @@ pipeline{
     environment{
         VERSION = "${env.BUILD_ID}"
     }
+stages {
+
+stage ('Checkout') 
+{
+steps
+    {
+    
+        checkout scm
+        
+    }
+    
+}
     stages{
         stage("sonar quality check"){
             agent {
